@@ -1,0 +1,10 @@
+compatible = "zmk,behavior-macro";
+
+#define MAKE_MACRO(LAYER, POSITION, BINDING) \
+  thumbcombos_ ## LAYER ## _ ## POSITION { \
+    layers = <LAYER>; \
+    key-positions = <MIRYOKU_KLUDGE_THUMBCOMBOS_ ## POSITION>; \
+    bindings = <BINDING>; \
+  };
+
+MAKE_MACRO(EXT_LAYER, LEFT, &lt U_FUN DEL)

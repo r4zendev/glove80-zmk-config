@@ -1,0 +1,65 @@
+compatible = "zmk,combos";
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <COLEMAK>; \
+  };
+
+#define COMBO_LONG(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <COLEMAK>; \
+    timeout-ms = <LONG_TIMEOUT_MS>; \
+  };
+
+#define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
+
+#define SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
+/ { \
+  behaviors { \
+    NAME: NAME { \
+      compatible = "zmk,behavior-mod-morph"; \
+      label = #NAME; \
+      #binding-cells = <0>; \
+      bindings = <BINDING>, <SHIFT_BINDING>; \
+      mods = <(MOD_LSFT|MOD_RSFT)>; \
+    }; \
+  }; \
+};
+
+
+
+
+/*           80 Keys
+╭───────────────────╮ ╭───────────────────╮
+│0  1  2  3  4      │ │      5  6  7  8  9│
+│10 11 12 13 14 15  │ │  16 17 18 19 20 21│
+│22 23 24 25 26 27  │ │  28 29 30 31 32 33│
+│34 35 36 37 38 39  │ │  40 41 42 43 44 45│
+│46 47 48 49 50 51  │ │  52 53 54 55 56 57│
+│64 65 66 67 68     │ │     75 76 77 78 79│
+│            69 52  │ │  57 74            │
+│             70 53 │ │ 56 73             │
+╰────────╮     71 54│ │55 72   ╭──────────╯
+         ╰──────────╯ ╰────────╯        */
+
+
+COMBO(cmd, &kp LGUI, 69 70)
+COMBO(opt, &kp LALT, 73 74)
+COMBO(ctrl, &kp LCTRL, 69 74)
+COMBO(f14, &kp F14, 70 73)
+
+SHIFT_FUNCTION(o_caps_word, &caps_word, &kp CAPS)
+
+LAYER_COMBO(qwerty_lock, &tog QWERTY, 69 70 73 74, COLEMAK)
+LAYER_COMBO(qwerty_unlock, &tog BASE, 69 70 73 74, QWERTY)
+
+LAYER_COMBO(ctrl_on_sym, &kp LCTRL, 70 71, SYM)
