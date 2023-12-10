@@ -151,8 +151,8 @@
             &none   &none        &none         &none         &none                                                                                   &none            &none            &none            &none            &none
             &none   &none        &none         &none         &none               &none                                              &none            &none            &none            &none            &none            &none
             &none   &kp F1       &kp F2        &kp F3        &kp F4              &kp F5                                             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &none
-            &none   &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &kp F11                                            &kp F12          &rgb_ug RGB_HUE  &rgb_ug RGB_SAT  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none
-            &none   &bootloader  &none         &none         &rgb_ug RGB_STATUS  &kp F13  &none  &none  &none  &none  &none  &none  &rgb_ug RGB_TOG  &rgb_ug RGB_HUE  &rgb_ug RGB_SAT  &rgb_ug RGB_BRI  &bootloader      &none
+            &none   &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &kp F11                                            &kp F12          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none
+            &none   &bootloader  &none         &none         &rgb_ug RGB_STATUS  &kp F13  &none  &none  &none  &none  &none  &none  &rgb_ug RGB_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &bootloader      &none
             &none   &none        &none         &none         &none                        &none  &none  &none  &none  &none  &none                   &none            &none            &none            &none            &none
             >;
         };
