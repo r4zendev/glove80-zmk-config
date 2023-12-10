@@ -1,3 +1,4 @@
+#define QUICK_TIMEOUT_MS 50
 #define LONG_TIMEOUT_MS 100
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
@@ -6,6 +7,7 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <COLEMAK>; \
+    timeout-ms = <QUICK_TIMEOUT_MS>; \
   };
 
 #define COMBO_LONG(NAME, BINDINGS, KEYPOS) \
