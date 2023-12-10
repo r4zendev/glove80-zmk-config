@@ -1,10 +1,17 @@
 compatible = "zmk,behavior-macro";
 
-#define MAKE_MACRO(LAYER, POSITION, BINDING) \
-  thumbcombos_ ## LAYER ## _ ## POSITION { \
-    layers = <LAYER>; \
-    key-positions = <MIRYOKU_KLUDGE_THUMBCOMBOS_ ## POSITION>; \
-    bindings = <BINDING>; \
+#define MAKE_MACRO(NAME, BINDINGS) \
+  NAME { \
+    compatible = "zmk,behavior-macro"; \
+    bindings = BINDINGS; \
   };
 
-MAKE_MACRO(EXT_LAYER, LEFT, &lt U_FUN DEL)
+MAKE_MACRO(opt_bspc, (<&macro_press &kp LALT>, <&macro_tap &kp BSPC>, <&macro_release &kp LALT>))
+MAKE_MACRO(opt_del, (<&macro_press &kp LALT>, <&macro_tap &kp DEL>, <&macro_release &kp LALT>))
+MAKE_MACRO(cmd_bspc, (<&macro_press &kp LGUI>, <&macro_tap &kp BSPC>, <&macro_release &kp LGUI>))
+MAKE_MACRO(cmd_del, (<&macro_press &kp LGUI>, <&macro_tap &kp DEL>, <&macro_release &kp LGUI>))
+
+MAKE_MACRO(opt_left, (<&macro_press &kp LALT>, <&macro_tap &kp LEFT>, <&macro_release &kp LALT>))
+MAKE_MACRO(opt_right, (<&macro_press &kp LALT>, <&macro_tap &kp RIGHT>, <&macro_release &kp LALT>))
+MAKE_MACRO(cmd_left, (<&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>))
+MAKE_MACRO(cmd_right, (<&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>))
