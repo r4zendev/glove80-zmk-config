@@ -1,6 +1,7 @@
 #define MAKE_MACRO(NAME, ...) \
   NAME: NAME { \
     compatible = "zmk,behavior-macro"; \
+    label = #NAME; \
     #binding-cells= <0>; \
     bindings = __VA_ARGS__; \
   };
