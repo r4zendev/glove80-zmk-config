@@ -174,12 +174,12 @@
 
 
             bindings = <
-            &none  &none      &none  &none  &none                                                                                     &none   &none      &none       &none           &none
-            &none  &none      &none  &none  &none  &none                                                                      &none   &none   &none      &none       &none           &none
-            &none  &kp Q      &kp W  &kp E  &kp R  &kp T                                                                      &kp Y   &kp U   &kp I      &kp O       &mt LBRKT P     &none
-            &none  &kp A      &kp S  &kp D  &kp F  &kp G                                                                      &kp H   &kp J   &kp K      &kp L       &mt SQT SEMI    &none
-            &none  &mt F13 Z  &kp X  &kp C  &kp V  &kp B  &none        &none       &none  &none  &none          &none         &kp N   &kp M   &kp COMMA  &kp DOT     &kp RBRKT FSLH  &none
-            &none  &none      &none  &none  &none         &lt EXT ESC  &kp LSHIFT  &none  &none  &lt SYM SPACE  &lt FNC BSPC          &none   &none      &none       &none           &none
+            &none  &none      &none  &none  &none                                                                                     &none   &none      &none       &none          &none
+            &none  &none      &none  &none  &none  &none                                                                      &none   &none   &none      &none       &none          &none
+            &none  &kp Q      &kp W  &kp E  &kp R  &kp T                                                                      &kp Y   &kp U   &kp I      &kp O       &mt LBKT P     &none
+            &none  &kp A      &kp S  &kp D  &kp F  &kp G                                                                      &kp H   &kp J   &kp K      &kp L       &mt SQT SEMI   &none
+            &none  &mt F13 Z  &kp X  &kp C  &kp V  &kp B  &none        &none       &none  &none  &none          &none         &kp N   &kp M   &kp COMMA  &kp DOT     &kp RBKT FSLH  &none
+            &none  &none      &none  &none  &none         &lt EXT ESC  &kp LSHIFT  &none  &none  &lt SYM SPACE  &lt FNC BSPC          &none   &none      &none       &none          &none
             >;
         };
     };
