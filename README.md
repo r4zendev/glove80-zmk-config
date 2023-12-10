@@ -11,9 +11,6 @@ Base layer is using Colemak-DH alphas with a slight change based on Manna Harbou
 Base layer:
 ![Base layer](assets/base.png)
 
-Base layer:
-![Base layer](assets/base.png)
-
 Symbol layer:
 ![Sym layer](assets/sym.png)
 
