@@ -124,12 +124,12 @@
 
 
             bindings = <
-            &none   &none       &none      &none     &none                                                                           &none            &none            &none             &none             &none
-            &none   &none       &none      &none     &none      &none                                                  &none         &none            &none            &none             &none             &none
-            &none   &kp EXCL    &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                &kp PG_UP     &macro cmd_bspc  &macro opt_bspc  &macro opt_del    &macro cmd_del    &none
-            &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI   &kp PERCENT                                            &kp PG_DN     &kp LEFT         &kp DOWN         &kp UP            &kp RIGHT         &none
-            &none   &kp GRAVE   &kp COLON  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none  &none  &o_caps_word  &macro cmd_left  &macro opt_left  &macro opt_right  &macro cmd_right  &none
-            &none   &none       &none      &none     &none                   &none  &none  &none  &none  &TAB   &RET                 &none            &none            &none             &none             &none
+            &none   &none       &none      &none     &none                                                                           &none      &none      &none       &none       &none
+            &none   &none       &none      &none     &none      &none                                                  &none         &none      &none      &none       &none       &none
+            &none   &kp EXCL    &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                &kp PG_UP     &cmd_bspc  &opt_bspc  &opt_del    &cmd_del    &none
+            &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI   &kp PERCENT                                            &kp PG_DN     &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT   &none
+            &none   &kp GRAVE   &kp COLON  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none  &none  &o_caps_word  &cmd_left  &opt_left  &opt_right  &cmd_right  &none
+            &none   &none       &none      &none     &none                   &none  &none  &none  &none  &TAB   &RET                 &none      &none      &none       &none       &none
             >;
         };
 
