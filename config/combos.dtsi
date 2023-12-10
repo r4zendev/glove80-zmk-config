@@ -1,27 +1,26 @@
+compatible = "zmk,combos";
+
 #define QUICK_TIMEOUT_MS 50
 #define LONG_TIMEOUT_MS 100
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
-    compatible = "zmk,combos"; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <COLEMAK>; \
+    layers = <ALL_LAYERS>; \
     timeout-ms = <QUICK_TIMEOUT_MS>; \
   };
 
 #define COMBO_LONG(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
-    compatible = "zmk,combos"; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <COLEMAK>; \
+    layers = <ALL_LAYERS>; \
     timeout-ms = <LONG_TIMEOUT_MS>; \
   };
 
 #define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
-    compatible = "zmk,combos"; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
@@ -30,7 +29,6 @@
 
 #define LAYER_COMBO_LONG(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
-    compatible = "zmk,combos"; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
