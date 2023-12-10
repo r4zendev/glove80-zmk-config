@@ -70,7 +70,6 @@ COMBO(opt, &kp LALT, 73 74)
 COMBO(ctrl, &kp LCTRL, 69 74)
 COMBO(f14, &kp F14, 70 73)
 
-LAYER_COMBO_LONG(qwerty_lock, &tog QWERTY, 69 70 73 74, COLEMAK)
-LAYER_COMBO_LONG(qwerty_unlock, &tog BASE, 69 70 73 74, QWERTY)
+COMBO_LONG(qwerty_toggle, &tog QWERTY, 69 70 73 74)
 
 LAYER_COMBO(ctrl_on_sym, &kp LCTRL, 69 70, SYM)

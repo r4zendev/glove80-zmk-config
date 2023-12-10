@@ -6,12 +6,12 @@
 
  // Layer definitions
     #define ALL_LAYERS 0 1 2 3 4
-    #define COLEMAK 0 1 2 3
+    #define COLEMAK 0 2 3 4
     #define BASE 0
-    #define SYM 1
-    #define EXT 2
-    #define FNC 3
-    #define QWERTY 4
+    #define QWERTY 1
+    #define SYM 2
+    #define EXT 3
+    #define FNC 4
 // -----------------
 
 #include <behaviors.dtsi>
@@ -78,82 +78,6 @@
             >;
         };
 
-        sym_layer {
-            // Number/Symbol layer
-            // ESC and SHIFT are turned into ⌘ and ⌥ for comfortable hotkeys
-            // Hold ⌘+⌥ for CTRL
-            // SHIFT is enabled as bottom ring finger mod on activation hand (& key)
-
-
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |      |      |      |      |                                                               |       |       |        |       |      |
-            // |       |      |      |      |      |      |                                                 |      |       |       |        |       |      |
-            // |       |  1   |  2   |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |   9    |   0   |      |
-            // |       |  <   |  [   |  (   |  {   |  -   |                                                 |  +   |   }   |   )   |   ]    |   >   |      |
-            // |       |  `   |  :   |  ;   |  _   |  #   |       |       |       | |       |       |       |  *   |   $   |   |   |&(SHIFT)|   =   |      |
-            // |       |      |      |      |      |      |   ⌘   |   ⌥   |       | |       |       |       |      |       |       |        |       |      |
-
-
-            bindings = <
-            &none   &none      &none      &none     &none                                                                           &none       &none     &none            &none      &none
-            &none   &none      &none      &none     &none      &none                                                      &none     &none       &none     &none            &none      &none
-            &none   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5                                                     &kp N6    &kp N7      &kp N8    &kp N9           &kp N0     &none
-            &none   &kp LT     &kp LBKT   &kp LPAR  &kp LBRC   &kp MINUS                                                  &kp PLUS  &kp RBRC    &kp RPAR  &kp RBKT         &kp GT     &none
-            &none   &kp GRAVE  &kp COLON  &kp SEMI  &kp UNDER  &kp HASH   &none     &none     &none  &none  &none  &none  &kp STAR  &kp DOLLAR  &kp PIPE  &mt LSHIFT AMPS  &kp EQUAL  &none
-            &none   &none      &none      &none     &none                 &kp LGUI  &kp LALT  &none  &none  &none  &none            &none     &none       &none            &none      &none
-            >;
-        };
-
-        ext_layer {
-            // Extension layer: Navigation, less used keys like TAB and RETURN, secondary SYM layer
-            // CAPS is caps_word by default. use with SHIFT for caps_lock
-            // SHIFT, CTRL, OPTION, CMD are enabled on left-hand home row for things like CMD+TAB, SHIFT+ENTER, SHIFT+CAPS etc.
-            // Left bottom row is duplicated from main sym layer.
-
-
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |                                                               |       |       |      |       |      |
-            // |       |     |     |      |      |      |                                                 |      |       |       |      |       |      |
-            // |       |  !  |  @  |  \   |  '   |  "   |                                                 | PGUP |   ⌘⌫  |   ⌥⌫  |  ⌥⌦  |   ⌘⌦  |      |
-            // |       |SHIFT|CTRL |OPTION| CMD  |  %   |                                                 | PGDN |   ←   |   ↓   |  ↑   |   →   |      |
-            // |       |  `  |  :  |  ;   |  _   |  ^   |       |       |       | |       |       |       | CAPS |   ⌘←  |   ⌥←  |  ⌥→  |   ⌘→  |      |
-            // |       |     |     |      |      |      |       |       |       | |       | TAB   | RET   |      |       |       |      |       |      |
-
-
-            bindings = <
-            &none   &none       &none      &none     &none                                                                             &none      &none      &none       &none       &none
-            &none   &none       &none      &none     &none      &none                                                    &none         &none      &none      &none       &none       &none
-            &none   &kp EXCL    &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                  &kp PG_UP     &cmd_bspc  &opt_bspc  &opt_del    &cmd_del    &none
-            &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI   &kp PERCENT                                              &kp PG_DN     &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT   &none
-            &none   &kp GRAVE   &kp COLON  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none    &none  &o_caps_word  &cmd_left  &opt_left  &opt_right  &cmd_right  &none
-            &none   &none       &none      &none     &none                   &none  &none  &none  &none  &kp TAB  &kp RET              &none      &none      &none       &none       &none
-            >;
-        };
-
-        fun_layer {
-            // FN/Media/settings layer
-            // Function keys, RGB controls, bluetooth input controls
-
-
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |      |      |      |          |                                                               |       |       |      |       |      |
-            // |       |      |      |      |          |      |                                                 |      |       |       |      |       |      |
-            // |       |  F1  |  F2  |  F3  |  F4      |  F5  |                                                 |  F6  |  F7   |  F8   |  F9  |  F10  |      |
-            // |       |BT_CLR| BT_0 | BT_1 | BT_2     |  F11 |                                                 |  F12 |RGBHUE |RGBSAT |RGBBRI|RGBMODE|      |
-            // |       | BOOT |      |      |RGB_STATUS|  F13 |       |       |       | |       |       |       |RGBTOG|RGBHUD |RGBSAD |RGBBRD|  BOOT |      |
-            // |       |      |      |      |          |      |       |       |       | |       |       |       |      |       |       |      |       |      |
-
-
-            bindings = <
-            &none   &none        &none         &none         &none                                                                                   &none            &none            &none            &none            &none
-            &none   &none        &none         &none         &none               &none                                              &none            &none            &none            &none            &none            &none
-            &none   &kp F1       &kp F2        &kp F3        &kp F4              &kp F5                                             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &none
-            &none   &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &kp F11                                            &kp F12          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none
-            &none   &bootloader  &none         &none         &rgb_ug RGB_STATUS  &kp F13  &none  &none  &none  &none  &none  &none  &rgb_ug RGB_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &bootloader      &none
-            &none   &none        &none         &none         &none                        &none  &none  &none  &none  &none  &none                   &none            &none            &none            &none            &none
-            >;
-        };
-
         qwerty_layer {
             // This layer is meant to be toggled when using any other languages than English: French, Russian, Ukrainian, etc.
             // All other mod/layer-taps are copied from BASE layer
@@ -177,6 +101,82 @@
             &none  &kp A      &kp S  &kp D  &kp F  &kp G                                                                      &kp H   &kp J   &kp K      &kp L       &mt SQT SEMI   &none
             &none  &mt F13 Z  &kp X  &kp C  &kp V  &kp B  &none        &none       &none  &none  &none          &none         &kp N   &kp M   &kp COMMA  &kp DOT     &mt RBKT FSLH  &none
             &none  &none      &none  &none  &none         &lt EXT ESC  &kp LSHIFT  &none  &none  &lt SYM SPACE  &lt FNC BSPC          &none   &none      &none       &none          &none
+            >;
+        };
+
+        sym_layer {
+            // Number/Symbol layer
+            // ESC and SHIFT are turned into CTRL and ⌥ for comfortable hotkeys
+            // Hold CTRL+⌥ for ⌘
+            // SHIFT is enabled as bottom ring finger mod on activation hand (& key)
+
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |      |      |      |                                                               |       |       |        |       |      |
+            // |       |      |      |      |      |      |                                                 |      |       |       |        |       |      |
+            // |       |  1   |  2   |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |   9    |   0   |      |
+            // |       |  <   |  [   |  (   |  {   |  -   |                                                 |  +   |   }   |   )   |   ]    |   >   |      |
+            // |       |  `   |  :   |  ;   |  _   |  #   |       |       |       | |       |       |       |  *   |   $   |   |   |&(SHIFT)|   =   |      |
+            // |       |      |      |      |      |      |  CTRL |   ⌥   |       | |       |PRESSED|       |      |       |       |        |       |      |
+
+
+            bindings = <
+            &none   &none      &none      &none     &none                                                                            &none       &none     &none            &none      &none
+            &none   &none      &none      &none     &none      &none                                                       &none     &none       &none     &none            &none      &none
+            &none   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5                                                      &kp N6    &kp N7      &kp N8    &kp N9           &kp N0     &none
+            &none   &kp LT     &kp LBKT   &kp LPAR  &kp LBRC   &kp MINUS                                                   &kp PLUS  &kp RBRC    &kp RPAR  &kp RBKT         &kp GT     &none
+            &none   &kp GRAVE  &kp COLON  &kp SEMI  &kp UNDER  &kp HASH   &none      &none     &none  &none  &none  &none  &kp STAR  &kp DOLLAR  &kp PIPE  &mt LSHIFT AMPS  &kp EQUAL  &none
+            &none   &none      &none      &none     &none                 &kp LCTRL  &kp LALT  &none  &none  &none  &none            &none     &none       &none            &none      &none
+            >;
+        };
+
+        ext_layer {
+            // Extension layer: Navigation, less used keys like TAB and RETURN, secondary SYM layer
+            // CAPS is caps_word by default. use with SHIFT for caps_lock
+            // SHIFT, CTRL, OPTION, CMD are enabled on left-hand home row for things like CMD+TAB, SHIFT+ENTER, SHIFT+CAPS etc.
+            // Left bottom row is duplicated from main sym layer.
+
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |     |     |      |      |                                                               |       |       |      |       |      |
+            // |       |     |     |      |      |      |                                                 |      |       |       |      |       |      |
+            // |       |  !  |  @  |  \   |  '   |  "   |                                                 | PGUP |   ⌘⌫  |   ⌥⌫  |  ⌥⌦  |   ⌘⌦  |      |
+            // |       |SHIFT|CTRL |OPTION| CMD  |  %   |                                                 | PGDN |   ←   |   ↓   |  ↑   |   →   |      |
+            // |       |  :  |  `  |  ;   |  _   |  ^   |       |       |       | |       |       |       | CAPS |   ⌘←  |   ⌥←  |  ⌥→  |   ⌘→  |      |
+            // |       |     |     |      |      |      |       |PRESSED|       | |       | TAB   | RET   |      |       |       |      |       |      |
+
+
+            bindings = <
+            &none   &none       &none      &none     &none                                                                             &none      &none      &none       &none       &none
+            &none   &none       &none      &none     &none      &none                                                    &none         &none      &none      &none       &none       &none
+            &none   &kp EXCL    &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                  &kp PG_UP     &cmd_bspc  &opt_bspc  &opt_del    &cmd_del    &none
+            &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI   &kp PERCENT                                              &kp PG_DN     &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT   &none
+            &none   &kp COLON   &kp GRAVE  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none    &none  &o_caps_word  &cmd_left  &opt_left  &opt_right  &cmd_right  &none
+            &none   &none       &none      &none     &none                   &none  &none  &none  &none  &kp TAB  &kp RET              &none      &none      &none       &none       &none
+            >;
+        };
+
+        fun_layer {
+            // FN/Media/settings layer
+            // Function keys, RGB controls, bluetooth input controls
+
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |      |      |          |                                                               |       |       |      |       |      |
+            // |       |      |      |      |          |      |                                                 |      |       |       |      |       |      |
+            // |       |  F1  |  F2  |  F3  |  F4      |  F5  |                                                 |  F6  |  F7   |  F8   |  F9  |  F10  |      |
+            // |       |BT_CLR| BT_0 | BT_1 | BT_2     |  F11 |                                                 |  F12 |RGBHUE |RGBSAT |RGBBRI|RGBMODE|      |
+            // |       | BOOT |      |      |RGB_STATUS|  F13 |       |       |       | |       |       |       |RGBTOG|RGBHUD |RGBSAD |RGBBRD|  BOOT |      |
+            // |       |      |      |      |          |      |       |       |       | |       |       |PRESSED|      |       |       |      |       |      |
+
+
+            bindings = <
+            &none   &none        &none         &none         &none                                                                                   &none            &none            &none            &none            &none
+            &none   &none        &none         &none         &none               &none                                              &none            &none            &none            &none            &none            &none
+            &none   &kp F1       &kp F2        &kp F3        &kp F4              &kp F5                                             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &none
+            &none   &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &kp F11                                            &kp F12          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none
+            &none   &bootloader  &none         &none         &rgb_ug RGB_STATUS  &kp F13  &none  &none  &none  &none  &none  &none  &rgb_ug RGB_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &bootloader      &none
+            &none   &none        &none         &none         &none                        &none  &none  &none  &none  &none  &none                   &none            &none            &none            &none            &none
             >;
         };
     };
