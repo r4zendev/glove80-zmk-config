@@ -25,6 +25,16 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
+    timeout-ms = <QUICK_TIMEOUT_MS>; \
+  };
+
+#define LAYER_COMBO_LONG(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    compatible = "zmk,combos"; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+    timeout-ms = <LONG_TIMEOUT_MS>; \
   };
 
 
@@ -62,7 +72,7 @@ COMBO(opt, &kp LALT, 73 74)
 COMBO(ctrl, &kp LCTRL, 69 74)
 COMBO(f14, &kp F14, 70 73)
 
-LAYER_COMBO(qwerty_lock, &tog QWERTY, 69 70 73 74, COLEMAK)
-LAYER_COMBO(qwerty_unlock, &tog BASE, 69 70 73 74, QWERTY)
+LAYER_COMBO_LONG(qwerty_lock, &tog QWERTY, 69 70 73 74, COLEMAK)
+LAYER_COMBO_LONG(qwerty_unlock, &tog BASE, 69 70 73 74, QWERTY)
 
-LAYER_COMBO(ctrl_on_sym, &kp LCTRL, 70 71, SYM)
+LAYER_COMBO(ctrl_on_sym, &kp LCTRL, 69 70, SYM)
