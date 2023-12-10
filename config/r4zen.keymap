@@ -33,13 +33,16 @@
 };
 
 / {
+    behaviors {
+        #include "shift.dtsi"
+    }
 
     combos {
         #include "combos.dtsi"    
     };
 
     macros {
-        #include "./macros.dtsi"
+        #include "macros.dtsi"
     }
 
     keymap {
@@ -97,7 +100,7 @@
             bindings = <
             &none   &none      &none      &none     &none                                                                           &none       &none     &none            &none      &none
             &none   &none      &none      &none     &none      &none                                                      &none     &none       &none     &none            &none      &none
-            &none   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5                                                     &kp N6    &kp N7      &kp N8    &kp N9           &kp N0     &none                                                                        &kp J   &kp L   &kp U      &kp Y       &kp '       &none
+            &none   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5                                                     &kp N6    &kp N7      &kp N8    &kp N9           &kp N0     &none
             &none   &kp LT     &kp LBKT   &kp LPAR  &kp LBRC   &kp MINUS                                                  &kp PLUS  &kp RBRC    &kp RPAR  &kp RBKT         &kp GT     &none
             &none   &kp GRAVE  &kp COLON  &kp SEMI  &kp UNDER  &kp HASH   &none     &none     &none  &none  &none  &none  &kp STAR  &kp DOLLAR  &kp PIPE  &mt LSHIFT AMPS  &kp EQUAL  &none
             &none   &none      &none      &none     &none                 &kp LGUI  &kp LALT  &none  &none  &none  &none            &none     &none       &none            &none      &none
@@ -108,6 +111,7 @@
             // Extension layer: Navigation, less used keys like TAB and RETURN, secondary SYM layer
             // CAPS is caps_word by default. use with SHIFT for caps_lock
             // SHIFT, CTRL, OPTION, CMD are enabled on left-hand home row for things like CMD+TAB, SHIFT+ENTER, SHIFT+CAPS etc.
+            // Left bottom row is duplicated from main sym layer.
 
 
             // ---------------------------------------------------------------------------------------------------------------------------------
@@ -115,17 +119,17 @@
             // |       |     |     |      |      |      |                                                 |      |       |       |      |       |      |
             // |       |  !  |  @  |  \   |  '   |  "   |                                                 | PGUP |   ⌘⌫  |   ⌥⌫  |  ⌥⌦  |   ⌘⌦  |      |
             // |       |SHIFT|CTRL |OPTION| CMD  |  %   |                                                 | PGDN |   ←   |   ↓   |  ↑   |   →   |      |
-            // |       |     |     |      |      |  ^   |       |       |       | |       |       |       | CAPS |   ⌘←  |   ⌥←  |  ⌥→  |   ⌘→  |      |
+            // |       |  `  |  :  |  ;   |  _   |  ^   |       |       |       | |       |       |       | CAPS |   ⌘←  |   ⌥←  |  ⌥→  |   ⌘→  |      |
             // |       |     |     |      |      |      |       |       |       | |       | TAB   | RET   |      |       |       |      |       |      |
 
 
             bindings = <
-            &none   &none      &none      &none     &none                                                                           &none            &none            &none             &none             &none
-            &none   &none      &none      &none     &none      &none                                                  &none         &none            &none            &none             &none             &none
-            &none   &kp EXCL   &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                &kp PG_UP     &macro cmd_bspc  &macro opt_bspc  &macro opt_del    &macro cmd_del    &none                                                                        &kp J   &kp L   &kp U      &kp Y       &kp '       &none
-            &none   &kp LT     &kp LBKT   &kp LPAR  &kp LBRC   &kp PERCENT                                            &kp PG_DN     &kp RBRC         &kp RPAR         &kp RBKT          &kp GT            &none
-            &none   &kp GRAVE  &kp COLON  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none  &none  &o_caps_word  &macro cmd_left  &macro opt_left  &macro opt_right  &macro cmd_right  &none
-            &none   &none      &none      &none     &none                   &none  &none  &none  &none  &TAB   &RET                 &none            &none            &none             &none             &none
+            &none   &none       &none      &none     &none                                                                           &none            &none            &none             &none             &none
+            &none   &none       &none      &none     &none      &none                                                  &none         &none            &none            &none             &none             &none
+            &none   &kp EXCL    &kp AT     &kp BSLH  &kp SQT    &kp DQT                                                &kp PG_UP     &macro cmd_bspc  &macro opt_bspc  &macro opt_del    &macro cmd_del    &none
+            &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI   &kp PERCENT                                            &kp PG_DN     &kp LEFT         &kp DOWN         &kp UP            &kp RIGHT         &none
+            &none   &kp GRAVE   &kp COLON  &kp SEMI  &kp UNDER  &kp CARET    &none  &none  &none  &none  &none  &none  &o_caps_word  &macro cmd_left  &macro opt_left  &macro opt_right  &macro cmd_right  &none
+            &none   &none       &none      &none     &none                   &none  &none  &none  &none  &TAB   &RET                 &none            &none            &none             &none             &none
             >;
         };
 
@@ -146,7 +150,7 @@
             bindings = <
             &none   &none        &none         &none         &none                                                                                   &none            &none            &none            &none            &none
             &none   &none        &none         &none         &none               &none                                              &none            &none            &none            &none            &none            &none
-            &none   &kp F1       &kp F2        &kp F3        &kp F4              &kp F5                                             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &none                                                                        &kp J   &kp L   &kp U      &kp Y       &kp '       &none
+            &none   &kp F1       &kp F2        &kp F3        &kp F4              &kp F5                                             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &none
             &none   &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &kp F11                                            &kp F12          &rgb_ug RGB_HUE  &rgb_ug RGB_SAT  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none
             &none   &bootloader  &none         &none         &rgb_ug RGB_STATUS  &kp F13  &none  &none  &none  &none  &none  &none  &rgb_ug RGB_TOG  &rgb_ug RGB_HUE  &rgb_ug RGB_SAT  &rgb_ug RGB_BRI  &bootloader      &none
             &none   &none        &none         &none         &none                        &none  &none  &none  &none  &none  &none                   &none            &none            &none            &none            &none

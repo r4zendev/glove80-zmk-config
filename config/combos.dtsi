@@ -24,19 +24,6 @@ compatible = "zmk,combos";
     layers = <LAYERS>; \
   };
 
-#define SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
-/ { \
-  behaviors { \
-    NAME: NAME { \
-      compatible = "zmk,behavior-mod-morph"; \
-      label = #NAME; \
-      #binding-cells = <0>; \
-      bindings = <BINDING>, <SHIFT_BINDING>; \
-      mods = <(MOD_LSFT|MOD_RSFT)>; \
-    }; \
-  }; \
-};
-
 
 
 
@@ -58,8 +45,6 @@ COMBO(cmd, &kp LGUI, 69 70)
 COMBO(opt, &kp LALT, 73 74)
 COMBO(ctrl, &kp LCTRL, 69 74)
 COMBO(f14, &kp F14, 70 73)
-
-SHIFT_FUNCTION(o_caps_word, &caps_word, &kp CAPS)
 
 LAYER_COMBO(qwerty_lock, &tog QWERTY, 69 70 73 74, COLEMAK)
 LAYER_COMBO(qwerty_unlock, &tog BASE, 69 70 73 74, QWERTY)
