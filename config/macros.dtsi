@@ -1,8 +1,8 @@
 compatible = "zmk,behavior-macro";
 
 #define MAKE_MACRO(NAME, BINDINGS) \
-  NAME { \
-    compatible = "zmk,behavior-macro"; \
+  NAME: NAME { \
+    #binding-cells= <0>; \
     bindings = BINDINGS; \
   };
 
