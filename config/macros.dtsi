@@ -1,17 +1,17 @@
 compatible = "zmk,behavior-macro";
 
-#define MAKE_MACRO(NAME, BINDINGS) \
+#define MAKE_MACRO(NAME, ...) \
   NAME: NAME { \
     #binding-cells= <0>; \
-    bindings = BINDINGS; \
+    bindings = __VA_ARGS__; \
   };
 
-MAKE_MACRO(opt_bspc, "<&macro_press &kp LALT>, <&macro_tap &kp BSPC>, <&macro_release &kp LALT>")
-MAKE_MACRO(opt_del, "<&macro_press &kp LALT>, <&macro_tap &kp DEL>, <&macro_release &kp LALT>")
-MAKE_MACRO(cmd_bspc, "<&macro_press &kp LGUI>, <&macro_tap &kp BSPC>, <&macro_release &kp LGUI>")
-MAKE_MACRO(cmd_del, "<&macro_press &kp LGUI>, <&macro_tap &kp DEL>, <&macro_release &kp LGUI>")
+MAKE_MACRO(opt_bspc, <&macro_press &kp LALT>, <&macro_tap &kp BSPC>, <&macro_release &kp LALT>)
+MAKE_MACRO(opt_del, <&macro_press &kp LALT>, <&macro_tap &kp DEL>, <&macro_release &kp LALT>)
+MAKE_MACRO(cmd_bspc, <&macro_press &kp LGUI>, <&macro_tap &kp BSPC>, <&macro_release &kp LGUI>)
+MAKE_MACRO(cmd_del, <&macro_press &kp LGUI>, <&macro_tap &kp DEL>, <&macro_release &kp LGUI>)
 
-MAKE_MACRO(opt_left, "<&macro_press &kp LALT>, <&macro_tap &kp LEFT>, <&macro_release &kp LALT>")
-MAKE_MACRO(opt_right, "<&macro_press &kp LALT>, <&macro_tap &kp RIGHT>, <&macro_release &kp LALT>")
-MAKE_MACRO(cmd_left, "<&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>")
-MAKE_MACRO(cmd_right, "<&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>")
+MAKE_MACRO(opt_left, <&macro_press &kp LALT>, <&macro_tap &kp LEFT>, <&macro_release &kp LALT>)
+MAKE_MACRO(opt_right, <&macro_press &kp LALT>, <&macro_tap &kp RIGHT>, <&macro_release &kp LALT>)
+MAKE_MACRO(cmd_left, <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>)
+MAKE_MACRO(cmd_right, <&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>)
