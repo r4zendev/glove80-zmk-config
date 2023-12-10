@@ -1,7 +1,7 @@
-compatible = "zmk,behavior-mod-morph";
 
 #define SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
   NAME: NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
     label = #NAME; \
     #binding-cells = <0>; \
     bindings = <BINDING>, <SHIFT_BINDING>; \
