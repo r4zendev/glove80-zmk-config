@@ -33,16 +33,16 @@
 };
 
 / {
+    behaviors {
+        #include "shift.dtsi"
+    }
+
     combos {
         #include "combos.dtsi"    
     };
 
     macros {
         #include "macros.dtsi"
-    }
-
-    behaviors {
-        #include "shift.dtsi"
     }
 
     keymap {

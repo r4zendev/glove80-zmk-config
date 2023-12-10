@@ -1,15 +1,11 @@
 compatible = "zmk,behavior-mod-morph";
 
 #define SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
-/ { \
-  behaviors { \
-    NAME: NAME { \
-      label = #NAME; \
-      #binding-cells = <0>; \
-      bindings = <BINDING>, <SHIFT_BINDING>; \
-      mods = <(MOD_LSFT|MOD_RSFT)>; \
-    }; \
-  }; \
+  NAME: NAME { \
+    label = #NAME; \
+    #binding-cells = <0>; \
+    bindings = <BINDING>, <SHIFT_BINDING>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
 };
 
 SHIFT_FUNCTION(o_caps_word, &caps_word, &kp CAPS)
