@@ -48,8 +48,8 @@
         default_layer {
             // Default layer using Colemak-DH alphas
             // ESC + SHIFT                    -> ⌘
-            // SPC + ⌫                        -> ⌥
-            // ESC + ⌫                        -> CTRL
+            // SPC + ⌫                        -> CTRL
+            // ESC + ⌫                        -> ⌥
             // SHIFT + SPC                    -> F14 (SHIFT+CTRL+OPTION+CMD mapping through Karabiner)
             // ESC + SHIFT + SPC + ⌫          -> switch to QWERTY layer
 
