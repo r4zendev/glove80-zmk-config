@@ -1,35 +1,35 @@
 compatible = "zmk,combos";
 
-#define QUICK_TIMEOUT_MS 50
-#define LONG_TIMEOUT_MS 100
+#define QUICK_TIMEOUT_MS 75
+#define LONG_TIMEOUT_MS 125
 
-#define COMBO(NAME, BINDINGS, KEYPOS) \
+#define COMBO(NAME, KEYPOS, ...) \
   combo_##NAME { \
-    bindings = <BINDINGS>; \
+    bindings = __VA_ARGS__; \
     key-positions = <KEYPOS>; \
     layers = <ALL_LAYERS>; \
     timeout-ms = <QUICK_TIMEOUT_MS>; \
   };
 
-#define COMBO_LONG(NAME, BINDINGS, KEYPOS) \
+#define COMBO_LONG(NAME, KEYPOS, ...) \
   combo_##NAME { \
-    bindings = <BINDINGS>; \
+    bindings = __VA_ARGS__; \
     key-positions = <KEYPOS>; \
     layers = <ALL_LAYERS>; \
     timeout-ms = <LONG_TIMEOUT_MS>; \
   };
 
-#define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+#define LAYER_COMBO(NAME, KEYPOS, LAYERS, ...) \
   combo_##NAME { \
-    bindings = <BINDINGS>; \
+    bindings = __VA_ARGS__; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
     timeout-ms = <QUICK_TIMEOUT_MS>; \
   };
 
-#define LAYER_COMBO_LONG(NAME, BINDINGS, KEYPOS, LAYERS) \
+#define LAYER_COMBO_LONG(NAME, KEYPOS, LAYERS, ...) \
   combo_##NAME { \
-    bindings = <BINDINGS>; \
+    bindings = __VA_ARGS__; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
     timeout-ms = <LONG_TIMEOUT_MS>; \
@@ -65,11 +65,13 @@ compatible = "zmk,combos";
                 ╰──────╯ ╰──────╯        */
 
 
-COMBO(cmd, &kp LGUI, 69 70)
-COMBO(ctrl, &kp LCTRL, 73 74)
-COMBO(opt, &kp LALT, 69 74)
-COMBO(f14, &kp F14, 70 73)
+COMBO(cmd, 69 70, <&kp LGUI>)
+COMBO(cmd+shift, 69 70 73, <&kp LGUI>, <&kp SHIFT>)
+COMBO(cmd+opt, 69 70 74, <&kp LGUI>, <&kp LCTRL>)
+COMBO(ctrl, 73 74, <&kp LCTRL>)
+COMBO(opt, 69 74, <&kp LALT>)
+COMBO(f14, 70 73, <&kp F14>)
 
-COMBO_LONG(qwerty_toggle, &tog QWERTY, 69 70 73 74)
+COMBO_LONG(qwerty_toggle, 69 70 73 74, <&tog QWERTY>)
 
-LAYER_COMBO(ctrl_on_sym, &kp LCTRL, 69 70, SYM)
+LAYER_COMBO(ctrl_on_sym, 69 70, SYM, <&kp LCTRL>)
