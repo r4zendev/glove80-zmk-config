@@ -65,9 +65,9 @@ compatible = "zmk,combos";
                 ╰──────╯ ╰──────╯        */
 
 
-COMBO(cmd, 69 70, <&kp LGUI>)
 COMBO(cmd_shift, 69 70 73, <&kp LGUI>, <&kp LSHIFT>)
 COMBO(cmd_opt, 69 70 74, <&kp LGUI>, <&kp LCTRL>)
+COMBO(cmd, 69 70, <&kp LGUI>)
 COMBO(ctrl, 73 74, <&kp LCTRL>)
 COMBO(opt, 69 74, <&kp LALT>)
 COMBO(f14, 70 73, <&kp F14>)
