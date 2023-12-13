@@ -67,10 +67,10 @@ compatible = "zmk,combos";
 
 COMBO(cmd, 69 70, <&kp LGUI>)
 COMBO(ctrl, 73 74, <&kp LCTRL>)
-COMBO(opt, 69 74, <&kp LALT>)
 COMBO(f14, 70 73, <&kp F14>)
 
 COMBO_LONG(qwerty_toggle, 69 70 73 74, <&tog QWERTY>)
+COMBO_LONG(fnc_hold, 69 74, <&mo FNC>)
 
 LAYER_COMBO(opt_base, 35 47, BASE QWERTY, <&kp LALT>)
 LAYER_COMBO(opt_shift, 44 62, BASE QWERTY, <&kp LSHIFT>)
