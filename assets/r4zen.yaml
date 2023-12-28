@@ -268,7 +268,7 @@ layers:
   - ''
   - ''
   - ''
-  - SPC P
+  - (LC(LEFT))
   - (LG(LS(LBKT)))
   - TAB
   - (LG(LS(RBKT)))

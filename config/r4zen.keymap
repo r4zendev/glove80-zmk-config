@@ -22,7 +22,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define SPC_N (LC(LEFT))
+#define SPC_P (LC(LEFT))
 #define SPC_N (LC(RIGHT))
 #define TAB_P (LG(LS(LBKT)))
 #define TAB_N (LG(LS(RBKT)))
