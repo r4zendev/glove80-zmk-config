@@ -1,0 +1,487 @@
+layers:
+  default: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', Q, W, F, P, B, J, L, U, Y, '''', '', '', A, R, S, T, G, M,
+    N, E, I, O, '', '', Z, X, C, D, V, '', '', '', '', '', '', K, H, ',', ., /, '', '', '', '', '', '', ext, LSHIFT, '', '', SPACE, sym, '', '', '', '', '']
+  qwerty:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - {t: P, h: '['}
+  - ''
+  - ''
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, h: ''''}
+  - ''
+  - ''
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: ']'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ext
+  - LSHIFT
+  - ''
+  - ''
+  - SPACE
+  - sym
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  sym:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ESC
+  - '?'
+  - '%'
+  - ':'
+  - '|'
+  - '&'
+  - ;
+  - (
+  - )
+  - TAB
+  - ''
+  - ''
+  - <
+  - '"'
+  - '`'
+  - '{'
+  - '-'
+  - +
+  - LSHIFT
+  - LALT
+  - LCTRL
+  - LGUI
+  - ''
+  - ''
+  - '~'
+  - /
+  - ^
+  - _
+  - '#'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '*'
+  - $
+  - '{'
+  - '}'
+  - \
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  num:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '*'
+  - ''
+  - '='
+  - <
+  - '>'
+  - (
+  - ''
+  - ''
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ''
+  - LSHIFT
+  - LALT
+  - LCTRL
+  - LGUI
+  - ''
+  - ''
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - ','
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '0'
+  - '['
+  - ']'
+  - )
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  ext:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SPC P
+  - (LG(LS(LBKT)))
+  - TAB
+  - (LG(LS(RBKT)))
+  - (LC(RIGHT))
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - DEL
+  - ''
+  - ''
+  - LGUI
+  - LCTRL
+  - LALT
+  - LSHIFT
+  - LG(GRAVE)
+  - PG DN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - RET
+  - ''
+  - ''
+  - LG(Z)
+  - LG(X)
+  - LG(C)
+  - LG(V)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BSPC
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  fun:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - ''
+  - ''
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - F11
+  - F12
+  - RGB HUI
+  - RGB SAI
+  - RGB BRI
+  - RGB EFF
+  - ''
+  - ''
+  - '&bootloader'
+  - ''
+  - ''
+  - RGB STATUS
+  - F13
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RGB TOG
+  - RGB HUD
+  - RGB SAD
+  - RGB BRD
+  - '&bootloader'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+combos:
+- p: [69, 70]
+  k: fun
+  l: [default, qwerty, sym, num, ext, fun]
+- p: [73, 74]
+  k: num
+  l: [default, qwerty, sym, num, ext, fun]
+- p: [70, 73]
+  k: LGUI
+  l: [default, qwerty, sym, num, ext, fun]
+- p: [69, 70, 73, 74]
+  k: {t: qwerty, h: toggle}
+  l: [default, qwerty, sym, num, ext, fun]
+- p: [23, 35]
+  k: LCTRL
+  l: [default, qwerty]
+- p: [24, 36]
+  k: '['
+  l: [default, qwerty]
+- p: [25, 37]
+  k: (
+  l: [default, qwerty]
+- p: [26, 38]
+  k: '{'
+  l: [default, qwerty]
+- p: [27, 39]
+  k: <
+  l: [default, qwerty]
+- p: [28, 40]
+  k: '>'
+  l: [default, qwerty]
+- p: [29, 41]
+  k: '}'
+  l: [default, qwerty]
+- p: [30, 42]
+  k: )
+  l: [default, qwerty]
+- p: [31, 43]
+  k: ']'
+  l: [default, qwerty]
+- p: [32, 44]
+  k: LALT
+  l: [default, qwerty]
+- p: [23, 24]
+  k: ESC
+  l: [default, qwerty]
+- p: [25, 26]
+  k: F13
+  l: [default, qwerty]
+- p: [47, 48]
+  k: TAB
+  l: [default, qwerty]
+- p: [30, 31]
+  k: '"'
+  l: [default, qwerty]
+- p: [31, 32]
+  k: DEL
+  l: [default, qwerty]
+- p: [42, 60]
+  k: F14
+  l: [default, qwerty]
+- p: [43, 61]
+  k: LCTRL
+  l: [default, qwerty]
+- p: [44, 62]
+  k: LSHIFT
+  l: [default, qwerty]
+- p: [59, 60]
+  k: BSPC
+  l: [default, qwerty]
+- p: [61, 62]
+  k: RET
+  l: [default, qwerty]
+- p: [25, 30]
+  k: '&caps_word'
+  l: [default, qwerty]
+- p: [24, 31]
+  k: CAPS
+  l: [default, qwerty]

@@ -1,5 +1,6 @@
 compatible = "zmk,combos";
 
+#define QUICKEST_TIMEOUT_MS 35
 #define QUICK_TIMEOUT_MS 75
 #define LONG_TIMEOUT_MS 125
 
@@ -9,6 +10,14 @@ compatible = "zmk,combos";
     key-positions = <KEYPOS>; \
     layers = <ALL_LAYERS>; \
     timeout-ms = <QUICK_TIMEOUT_MS>; \
+  };
+
+#define COMBO_INSTANT(NAME, KEYPOS, ...) \
+  combo_##NAME { \
+    bindings = __VA_ARGS__; \
+    key-positions = <KEYPOS>; \
+    layers = <ALL_LAYERS>; \
+    timeout-ms = <QUICKEST_TIMEOUT_MS>; \
   };
 
 #define COMBO_LONG(NAME, KEYPOS, ...) \
@@ -25,6 +34,14 @@ compatible = "zmk,combos";
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
     timeout-ms = <QUICK_TIMEOUT_MS>; \
+  };
+
+#define LAYER_COMBO_INSTANT(NAME, KEYPOS, LAYERS, ...) \
+  combo_##NAME { \
+    bindings = __VA_ARGS__; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+    timeout-ms = <QUICKEST_TIMEOUT_MS>; \
   };
 
 #define LAYER_COMBO_LONG(NAME, KEYPOS, LAYERS, ...) \
@@ -65,12 +82,41 @@ compatible = "zmk,combos";
                 ╰──────╯ ╰──────╯        */
 
 
-COMBO(cmd, 69 70, <&kp LGUI>)
-COMBO(ctrl, 73 74, <&kp LCTRL>)
-COMBO(f14, 70 73, <&kp F14>)
+COMBO_INSTANT(fnc_hold, 69 70, <&mo FNC>)
+COMBO_INSTANT(num_hold, 73 74, <&mo NUM>)
+COMBO_INSTANT(cmd, 70 73, <&kp LGUI>)
+COMBO(qwerty_toggle, 69 70 73 74, <&tog QWERTY>)
 
-COMBO_LONG(qwerty_toggle, 69 70 73 74, <&tog QWERTY>)
-COMBO_LONG(fnc_hold, 69 74, <&mo FNC>)
 
-LAYER_COMBO(opt_base, 35 47, BASE QWERTY, <&kp LALT>)
-LAYER_COMBO(opt_shift, 44 62, BASE QWERTY, <&kp LSHIFT>)
+
+LAYER_COMBO(ctrl_top_base, 23 35, BASE QWERTY, <&kp LCTRL>)
+LAYER_COMBO(lbkt_base, 24 36, BASE QWERTY, <&kp LBKT>)
+LAYER_COMBO(lpar_base, 25 37, BASE QWERTY, <&kp LPAR>)
+LAYER_COMBO(lbrc_base, 26 38, BASE QWERTY, <&kp LBRC>)
+LAYER_COMBO(lt_base, 27 39, BASE QWERTY, <&kp LT>)
+
+LAYER_COMBO(gt_base, 28 40, BASE QWERTY, <&kp GT>)
+LAYER_COMBO(rbrc_base, 29 41, BASE QWERTY, <&kp RBRC>)
+LAYER_COMBO(rpar_base, 30 42, BASE QWERTY, <&kp RPAR>)
+LAYER_COMBO(rbkt_base, 31 43, BASE QWERTY, <&kp RBKT>)
+LAYER_COMBO(opt_top_base, 32 44, BASE QWERTY, <&kp LALT>)
+
+
+
+LAYER_COMBO_INSTANT(esc_base, 23 24, BASE QWERTY, <&kp ESC>)
+LAYER_COMBO_INSTANT(f13_base, 25 26, BASE QWERTY, <&kp F13>)
+LAYER_COMBO_INSTANT(tab_base, 47 48, BASE QWERTY, <&kp TAB>)
+
+LAYER_COMBO_INSTANT(del_base, 30 31, BASE QWERTY, <&kp DQT>)
+LAYER_COMBO_INSTANT(dqt_base, 31 32, BASE QWERTY, <&kp DEL>)
+
+LAYER_COMBO(f14_base, 42 60, BASE QWERTY, <&kp F14>)
+LAYER_COMBO(ctrl_base, 43 61, BASE QWERTY, <&kp LCTRL>)
+LAYER_COMBO(shift_base, 44 62, BASE QWERTY, <&kp LSHIFT>)
+LAYER_COMBO_INSTANT(bspc_base, 59 60, BASE QWERTY, <&kp BSPC>)
+LAYER_COMBO_INSTANT(ret_base, 61 62, BASE QWERTY, <&kp RET>)
+
+
+
+LAYER_COMBO(caps_word_base, 25 30, BASE QWERTY, <&caps_word>)
+LAYER_COMBO(caps_base, 24 31, BASE QWERTY, <&kp CAPS>)
