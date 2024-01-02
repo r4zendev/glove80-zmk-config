@@ -2,31 +2,4 @@
 
 This is my layout for MoErgo's Glove80 board.
 
-## Keys used (34):
-
-![Used keys](assets/used-keys.png)
-
-## Layout
-
-Base layer is using Colemak-DH alphas with a slight change based on Manna Harbour's [Miryoku](https://github.com/manna-harbour/miryoku), which is replacing `;` at top right pinky with `'`. It's highly inspired by [Seniply](https://github.com/stevep99/seniply) and [casuanoob](https://github.com/casuanoob/zmk-config-bkb) layouts.
-To use this as-is, one would need to install [Karabiner](https://karabiner-elements.pqrs.org/) or any other software to remap f13 and f14 keys. F13 is mapped to Apple globe key, F14 is a combination of CMD+SHIFT+OPT+CTRL.
-
-### Base layer:
-
-![Base layer](assets/base.png)
-
-### Symbol layer:
-
-![Sym layer](assets/sym.png)
-
-### Num layer:
-
-![Num layer](assets/num.png)
-
-### Extension layer:
-
-![Ext layer](assets/ext.png)
-
-### Function/Media layer:
-
-![Fun layer](assets/fun.png)
+[View it in MoErgo's layout editor](https://my.glove80.com/#/layout/user/3ecbb6fa-52f7-4387-953e-ac5d7b8c63ff)
